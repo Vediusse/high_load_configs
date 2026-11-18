@@ -7,6 +7,16 @@ spring:
             connect-timeout: 1000
             response-timeout: 10s
           routes:
+            - id: notification-api
+              uri: lb://notification-service
+              predicates:
+                - Path=/api/v1/notifications,/api/v1/notifications/**
+            - id: notification-docs
+              uri: lb://notification-service
+              predicates:
+                - Path=/v3/api-docs/notifications
+              filters:
+                - SetPath=/v3/api-docs
             - id: identity-api
               uri: lb://identity-service
               predicates:

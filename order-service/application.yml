@@ -29,6 +29,8 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     urls:
+      - name: Уведомления
+        url: /v3/api-docs/notifications
       - name: Заказы и организации
         url: /v3/api-docs
       - name: Кухня
