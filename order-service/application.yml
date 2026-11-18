@@ -127,3 +127,8 @@ resilience4j:
         # enableRandomizedWait: не задан (выключен) — случайный разброс паузы OPEN отключён.
         # randomizedWaitFactor: не задан; при включении randomized wait дефолт 0.5 (±50%).
         #   В этой версии exponential backoff и randomized wait одновременно включать нельзя.
+
+---
+catering:
+  events:
+    enabled: true

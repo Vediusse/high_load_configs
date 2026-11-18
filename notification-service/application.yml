@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: ${NOTIFICATION_DB_URL:jdbc:postgresql://notification-postgres:5432/notifications}
+    username: ${NOTIFICATION_DB_USER:notifications}
+    password: ${NOTIFICATION_DB_PASSWORD}
+    hikari:
+      connection-timeout: 5000
+      validation-timeout: 3000
+  flyway:
+    enabled: true
+    validate-migration-naming: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          identity-service:
+            connectTimeout: 1000
+            readTimeout: 2000
+            loggerLevel: none
+identity:
+  notifications:
+    secret: ${NOTIFICATION_IDENTITY_SECRET}
+catering:
+  events:
+    enabled: true
