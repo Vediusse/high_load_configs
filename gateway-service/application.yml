@@ -7,6 +7,16 @@ spring:
             connect-timeout: 1000
             response-timeout: 10s
           routes:
+            - id: file-api
+              uri: lb://file-service
+              predicates:
+                - Path=/api/v1/files,/api/v1/files/**,/api/v1/orders/{id}/files
+            - id: file-docs
+              uri: lb://file-service
+              predicates:
+                - Path=/v3/api-docs/files
+              filters:
+                - SetPath=/v3/api-docs
             - id: notification-api
               uri: lb://notification-service
               predicates:
