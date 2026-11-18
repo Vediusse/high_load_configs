@@ -49,6 +49,9 @@ spring:
       max-poll-records: 20
       properties:
         max.poll.interval.ms: 300000
+        session.timeout.ms: 10000
+        heartbeat.interval.ms: 3000
+        metadata.max.age.ms: 10000
         default.api.timeout.ms: 5000
         request.timeout.ms: 5000
 logging:
