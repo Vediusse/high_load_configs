@@ -42,3 +42,9 @@ catering:
   blocking:
     threads: 4
     queue-capacity: 16
+
+# File policy refresh must keep the discovery connection alive.
+eureka:
+  client:
+    refresh:
+      enable: false
