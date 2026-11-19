@@ -79,6 +79,7 @@ spring:
           consumer-properties:
             key.deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
             value.deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+            auto.offset.reset: latest
             session.timeout.ms: 10000
             heartbeat.interval.ms: 3000
             metadata.max.age.ms: 10000
